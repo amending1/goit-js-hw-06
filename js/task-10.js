@@ -24,8 +24,12 @@ function destroyBoxes() {
   boxesContainer.innerHTML = "";
 }
 
+function handleCreateClick() {
+  const boxes = boxNumberInput.value;
+  createBoxes(boxes);
+}
 const createButton = document.querySelector("button[data-create]");
 const destroyButton = document.querySelector("button[data-destroy]");
 
-createButton.addEventListener("click", createBoxes);
+createButton.addEventListener("click", handleCreateClick);
 destroyButton.addEventListener("click", destroyBoxes);

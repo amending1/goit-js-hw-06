@@ -9,6 +9,7 @@ const ingredients = [
 
 //  uzyskuję dostęp do elementu <ul> o identyfikatorze "ingredients" i przypisuję go do zmiennej ingredientsList (teraz mogę używać tej zmiennej do manipulacji tym konkretnym elementem listy w dalszej części skryptu)
 const ingredientsList = document.getElementById("ingredients");
+const elements = [];
 
 // Pętla przechodząca przez każdy element tablicy ingredients
 ingredients.forEach((ingredient) => {
@@ -22,5 +23,7 @@ ingredients.forEach((ingredient) => {
   listItem.classList.add("item");
 
   // dodaję <li> do listy ul#ingredients
-  ingredientsList.appendChild(listItem);
+  elements.push(listItem);
 });
+// dodaję elementy <li> do listy ul#ingredients
+ingredientsList.append(...elements);
